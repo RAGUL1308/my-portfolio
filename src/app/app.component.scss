@@ -1,0 +1,72 @@
+@use '../styles/tokens.scss' as *;
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.2rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $white;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  font-family: $font-sf-pro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  .nav-link {
+    font-size: $title2-font-size; // clean readable text
+    font-weight: $weight-medium;
+    text-decoration: none;
+    color: $black-primary;
+    position: relative;
+
+    &:hover {
+      color: $blue;
+      transform: translateY(-2px);
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    &:focus {
+      outline: none;
+      color: $blue;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: $blue;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+
+    .nav-link {
+      font-size: $body-font-size;
+      margin: 0.25rem 0;
+    }
+  }
+}

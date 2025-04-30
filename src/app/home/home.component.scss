@@ -1,0 +1,83 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Home Section Styles */
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+}
+
+.home-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.home-image img {
+  width: 260px;
+  height: 260px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.home-content {
+  flex: 1.5;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.85);
+    margin: 0 0 12px;
+
+    &:first-of-type {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  }
+}

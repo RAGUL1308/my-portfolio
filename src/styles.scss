@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+/* ================================
+   Global Styles (styles.scss)
+================================ */
+
+@use '../src/styles/tokens.scss' as *;
+@use 'sass:color';
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./app/assets/fonts/sf-pro-display/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./app/assets/fonts/sf-pro-display/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./app/assets/fonts/sf-pro-display/SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-sf-pro;
+  background-color: $bg-ultrathick;
+  color: $black-primary;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: $black;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-link {
+  color: $label-light-primary;
+  font-size: $body-font-size;
+  font-weight: $weight-medium;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.content {
+  padding: 40px 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-sf-pro;
+  font-weight: $weight-semibold;
+  color: $black-primary;
+}
+
+button {
+  font-family: $font-sf-pro;
+  font-size: $body-font-size;
+  font-weight: $weight-medium;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: $blue;
+  color: $white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: color.adjust($blue, $lightness: -10%);
+
+  }
+}
+
+input, textarea {
+  font-family: $font-sf-pro;
+  font-size: $body-font-size;
+  padding: 12px;
+  border: 1px solid $black-tertiary;
+  border-radius: 6px;
+  background-color: $white;
+  color: $black-primary;
+  margin-bottom: 12px;
+}
+
+.project-card {
+  background-color: $white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Typography Utilities */
+.large-title {
+  font-size: $large-title-font-size;
+  line-height: $large-title-line-height;
+  font-weight: $weight-bold;
+}
+
+.title1 {
+  font-size: $title1-font-size;
+  line-height: $title1-line-height;
+  font-weight: $weight-semibold;
+}
+
+.title2 {
+  font-size: $title2-font-size;
+  line-height: $title2-line-height;
+  font-weight: $weight-semibold;
+}
+
+.body {
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  font-weight: $weight-regular;
+  color: $black-secondary;
+}
+
+/* Section Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
