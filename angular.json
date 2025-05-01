@@ -48,9 +48,9 @@
                   "maximumError": "1MB"
                 },
                 {
-                  "type": "anyassetsonentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "type": "all",
+                  "maximumWarning": "1MB",
+                  "maximumError": "2MB"
                 }
               ],
               "outputHashing": "all"
